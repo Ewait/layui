@@ -2,10 +2,23 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/lib/layui/css/layui.css' />
   </head>
   <body>
+    <% if(showHead){ %>
+        <% include header.ejs %>
+    <% } %>
+    <% include nav.ejs %>
+    <div style="float: right;position: absolute;margin-left: 220px;">
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p><i class="layui-icon">&#xe60c;</i>Welcome to <%= title %>!This is <%= host %></p>
+    </div>
   </body>
+  <script src="/lib/layui/layui.js"></script>
+  <script type="application/javascript">
+      layui.use('element', function(){
+          var element = layui.element(); //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+      });
+  </script>
 </html>
